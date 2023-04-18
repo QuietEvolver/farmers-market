@@ -5,21 +5,21 @@ function LocationDisplay(props) {
   const locationDisplayStyle = {
     border: '1px solid black',
     borderRadius: '1rem',
-    width: '40vw',
+    width: '30vw',
     minHeight: '20rem',
-    padding: '1rem',
+    padding: '1rem 1.5rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
   };
 
   return (
     <React.Fragment>
       <div style={locationDisplayStyle} className="LocationDisplay">
-        
-        <div>
-          <div>Day selected: {props.day}</div>
-          <div>Location: {props.location}</div>
-          <div>Hours: {props.hours}</div>
-          <div>Booth: {props.booth}</div>
-        </div>
+        <div style={{ fontWeight: 'bold', fontSize: '1.25rem'}}>{props.day}</div>
+        <div className='display-row'><span>Location:</span> <span>{props.location}</span></div>
+        <div className='display-row'><span>Hours:</span> <span>{props.hours}</span></div>
+        <div className='display-row'><span>Booth:</span> <span>{props.booth}</span></div>
       </div>
     </React.Fragment>
   );

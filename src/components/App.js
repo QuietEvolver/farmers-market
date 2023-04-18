@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
-import Footer from './Footer';
 import LocationController from './LocationController';
+import ProduceController from './ProduceController';
 
 function App() {
   return (
@@ -10,9 +10,8 @@ function App() {
         <Header />
         <main>
           <LocationController />
-          
+          <ProduceController />
         </main>
-        <Footer />
       </div>
     </React.Fragment>
   );
