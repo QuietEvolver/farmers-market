@@ -37,28 +37,41 @@ const marketSchedule = [
      hours: "10:00am - 1:30pm",
      booth: "9G"
   }
- ]; 
+ ];
 
-function LocationDisplay() {
+function getLocationForDay(day) {
+  return marketSchedule.filter(daySchedule => daySchedule.day === day)[0];
+}
+
+function LocationDisplay(props) {
   const locationDisplayStyle = {
-    backgroundColor: 'salmon',
     border: '1px solid black',
     borderRadius: '1rem',
     width: '40vw',
     minHeight: '20rem',
   };
+
+  const scheduleForDay = getLocationForDay(props.selectedDay);
+
   return (
     <React.Fragment>
       <div style={locationDisplayStyle} className="LocationDisplay">
         <select name="day" className="day-select">
-          <option>Monday</option>
-          <option>Tuesday</option>
-          <option>Wednesday</option>
-          <option>Thursday</option>
-          <option>Friday</option>
-          <option>Saturday</option>
-          <option>Sunday</option>
+        <option value="">--Please choose a day--</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
         </select>
+        <div>
+          <div>selected: {scheduleForDay.day}</div>
+          <div>Location: {scheduleForDay.location}</div>
+          <div>hours: {scheduleForDay.hours}</div>
+          <div>Booth: {scheduleForDay.booth}</div>
+        </div>
       </div>
     </React.Fragment>
   );
