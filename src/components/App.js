@@ -9,8 +9,8 @@ function App() {
       <div className="App">
         <Header />
         <main>
-          <LocationController />
-          <ProduceController />
+          <div class="index-list"><LocationController /></div>
+          <div class="index-list"><ProduceController /></div>
         </main>
       </div>
     </React.Fragment>
