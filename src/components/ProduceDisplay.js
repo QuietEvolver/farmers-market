@@ -21,7 +21,10 @@ function ProduceDisplay(props) {
         <div className='display-row'><span>Hours:</span> <span>{props.hours}</span></div>
         <div className='display-row'><span>Booth:</span> <span>{props.booth}</span></div> */}
         <div style={{ fontWeight: 'bold', fontSize: '1.25rem'}}>{props.month}</div>
-        {props.selection.map((item) => <div>{item}</div>)}      
+        {props.selection.map((item, index) => {
+
+          return <div id={'produce-' + index}>{item}</div>;
+        })}      
       </div>
     </React.Fragment>
   );
